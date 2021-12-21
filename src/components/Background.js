@@ -28,15 +28,16 @@ import React, { Component } from 'react';
 class Background extends Component {
   render() {
     return (
-      <header>hello from the background
-          <nav>
+      <body>
+        {/* hello from the background */}
+          {/* <nav>
             <ul>
                 <li>
                     <a href="#">Home</a>
                 </li>
             </ul>
-        </nav>
-      </header>
+        </nav> */}
+      </body>
     );
   }
 }

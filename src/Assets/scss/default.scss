@@ -6,3 +6,172 @@ header {
     background: $black;
     color: $white;
 }
+
+body {
+    background: url("../../img/Background.png") no-repeat center center fixed; 
+    -webkit-background-size: dw;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.input-bubble {
+    position: fixed;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+	padding: 10px;
+    padding-left: 25px;
+    border: 1px solid;
+    border-color: $lightGray;
+	border-radius: 25px;
+	outline: none;
+	width: 60%;
+}
+
+.opaque {
+    position: fixed;
+    z-index: 0;
+    background-color: white;
+    opacity: 0.5;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    cursor: pointer;
+}
+
+.region-desk {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .desk {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .computer {
+        position: absolute;
+        left: 50%;
+        top: -5%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        cursor: pointer;
+    }
+
+    .mouse {
+        position: absolute;
+        left: 82%;
+        top: 25%;
+        transform: translate(-50%, -50%);
+        width: 6%;
+    }
+}
+
+.computer-region {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 120vh;
+    object-fit: contain;
+
+    .computer-close {
+        position: fixed;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        max-height: 120%;
+    }
+
+    .computer-screen {
+        position: relative;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, -80%);
+        width: 87%;
+        aspect-ratio: 1 / 0.5;
+        background-color: white;
+        border-radius: 50px;
+        overflow-y: scroll;
+        .google {
+            position: relative;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, 120%);
+            width: 35%;
+        }
+
+        .button-container {
+            position: fixed;
+            left: 50%;
+            top: 80%;
+            transform: translate(-50%, -50%);
+            flex-direction: row;
+            flex: 1;
+
+            .button {
+                position: relative;
+                border: none;
+                color: gray;
+                padding: 5px;
+                padding-left: 15px;
+                padding-right: 15px;
+                outline: none;
+                font-size: 14px;
+    
+            }
+    
+            .button-left {
+                margin-right: 10px;
+            }
+            .button-right {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.computer-screen::-webkit-scrollbar {
+    display: none;
+}
+
+
+.shelf {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    position: fixed;
+    bottom: 45%;
+    right: 5%;
+}
+
+.window {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    position: fixed;
+    top: 10%;
+    left: 5%;
+}
+
+.banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 13%;
+    position: fixed;
+    top: 10%;
+    right: 30%;
+}

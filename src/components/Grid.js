@@ -31,7 +31,7 @@ class Grid extends Component {
     const Project = (name, img) => {
       return (
         <p>
-          {img ? <img src={img}></img> : <div className="blank"></div>}
+          {img ? <img src={img}></img> : null} {/*<div className="blank"></div>*/}
           <span></span>
           <span className="short"></span>
           
@@ -64,7 +64,7 @@ class Grid extends Component {
                           <span className="short"></span>
                       </p>
                   </div>
-                  <div>    
+                  <div>
                       <p>
                           <span></span>
                           <span className="short"></span>
@@ -131,4 +131,3 @@ class Grid extends Component {
 }
 
 export default Grid;
-

@@ -42,7 +42,8 @@ body{
 }
 
 .thumbs{ /* scrollview  */
-    padding:10px 50px 30px 70px;
+    padding:10px 50px 0px 70px;
+    margin-top: 5%;
     margin-bottom: 400px;
     position: relative;
 }

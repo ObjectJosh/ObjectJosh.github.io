@@ -35,7 +35,7 @@ class Desk extends Component {
         <div className="region-desk">
             {/* <img src={desk_img} alt="Desk" class="desk"></img> */}
             <img src={desk} alt="Desk" className="desk"></img>
-            <img src={computer_img} alt="Computer" className="computer" onClick={this.props.clickHandler}></img>
+            <img src={computer_img} alt="Computer" className="computer clickable" onClick={this.props.clickHandler}></img>
             <img src={mouse_img} alt="Mouse" className="mouse"></img>
         </div>
     );

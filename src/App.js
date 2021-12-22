@@ -7,6 +7,7 @@ import Computer from './components/Computer';
 import Shelf from './components/Shelf';
 import Window from './components/Window';
 import Banner from './components/Banner';
+import Plane from './components/subcomponents/Plane';
 
 
 // Includes
@@ -16,7 +17,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showOpaque: false,
       showComputer: false,
+      showPlane: false,
     }
     this.clickEvent = this.clickEvent.bind(this);
   }
@@ -26,7 +29,9 @@ class App extends Component {
     switch(target) {
       case "opaque":
         this.setState({
+          showOpaque: false,
           showComputer: false,
+          showPlane: false,
         }, () => {
         });
         break;
@@ -35,15 +40,27 @@ class App extends Component {
           showComputer: true,
         }, () => {
           // renderOpaque();
-          console.log(this.state.show);
-          console.log(target)
-          
+          // console.log(this.state.show);
+          // console.log(target)
+          this.showOpaque();
         });
         break;
+      case "plane":
+        this.setState({
+          showPlane: true,
+        }, () => {
+          this.showOpaque();
+        });
       default:
         // pass
       
     }
+  }
+
+  showOpaque() {
+    this.setState({
+      showOpaque: true,
+    })
   }
   
 
@@ -51,7 +68,7 @@ class App extends Component {
     // Components
     const renderOpaque = () => {
       return (
-        <div className="opaque" onClick={() => this.clickEvent("opaque")}>
+        <div className="opaque clickable" onClick={() => this.clickEvent("opaque")}>
           {console.log("showing")}
         </div>
       );
@@ -63,11 +80,12 @@ class App extends Component {
       <div className="App">
         <Background></Background>
         <Desk clickHandler={() => this.clickEvent("computer")}></Desk>
-        <Shelf></Shelf>
+        <Shelf clickHandler={() => this.clickEvent("plane")}></Shelf>
         <Window></Window>
         <Banner></Banner>
-        {this.state.showComputer ? renderOpaque() : null}
+        {this.state.showOpaque ? renderOpaque() : null}
         {this.state.showComputer ? <Computer></Computer> : null}
+        {this.state.showPlane ? <Plane></Plane> : null}
       </div>
     );
   }

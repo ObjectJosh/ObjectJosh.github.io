@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.4acb2137.css",
-    "main.js": "/static/js/main.89a600f1.js",
+    "main.css": "/static/css/main.367b66a4.css",
+    "main.js": "/static/js/main.45c77671.js",
     "static/js/787.9b9c0edf.chunk.js": "/static/js/787.9b9c0edf.chunk.js",
+    "static/media/Airplane_Large_Written.png": "/static/media/Airplane_Large_Written.4768b5024f7d0e348702.png",
     "static/media/Shelf.png": "/static/media/Shelf.41dd8c3a46e29354ab12.png",
     "static/media/Background.png": "/static/media/Background.ce30975d71ccd84e5018.png",
     "static/media/Desk_Items.png": "/static/media/Desk_Items.53a77655ced160c1882f.png",
@@ -20,12 +21,12 @@
     "static/media/singify.png": "/static/media/singify.7b012c036614e9a95c62.png",
     "static/media/Gmail.png": "/static/media/Gmail.9234c8c7319c86e4d50f.png",
     "index.html": "/index.html",
-    "main.4acb2137.css.map": "/static/css/main.4acb2137.css.map",
-    "main.89a600f1.js.map": "/static/js/main.89a600f1.js.map",
+    "main.367b66a4.css.map": "/static/css/main.367b66a4.css.map",
+    "main.45c77671.js.map": "/static/js/main.45c77671.js.map",
     "787.9b9c0edf.chunk.js.map": "/static/js/787.9b9c0edf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4acb2137.css",
-    "static/js/main.89a600f1.js"
+    "static/css/main.367b66a4.css",
+    "static/js/main.45c77671.js"
   ]
 }

@@ -15,6 +15,49 @@ body {
     background-size: cover;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.splash {
+    position: fixed;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+
+    .splash-content {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        flex-direction: column;
+
+        .constructionimg {
+            width: 40%;
+            transform: translate(-50%, -60%);
+            float: center;
+        }
+
+        .splash-continue {
+            position: absolute;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            border-radius: 10vh;
+            outline: none;
+            border: none;
+            font-size: 3vh;
+            padding: 10px 50px 10px 50px;
+            font-weight: 800;
+        }
+    }
+}
+
 .clickable {
     cursor: pointer;
 }

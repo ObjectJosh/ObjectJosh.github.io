@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 // Components
+import Splash from './components/Splash';
 import Background from './components/Background';
 import Desk from './components/Desk';
 import Computer from './components/Computer';
@@ -17,6 +18,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showSplash: true,
       showOpaque: false,
       showComputer: false,
       showPlane: false,
@@ -27,6 +29,12 @@ class App extends Component {
   clickEvent(target) {
     console.log(target);
     switch(target) {
+      case "continue":
+        this.setState({
+          showSplash: false,
+        }, () => {
+        });
+        break;
       case "opaque":
         this.setState({
           showOpaque: false,
@@ -78,6 +86,7 @@ class App extends Component {
     // Main Component
     return (
       <div className="App">
+        {this.state.showSplash ? <Splash clickHandler={() => this.clickEvent("continue")}></Splash> : null}
         <Background></Background>
         <Desk clickHandler={() => this.clickEvent("computer")}></Desk>
         <Shelf clickHandler={() => this.clickEvent("plane")}></Shelf>

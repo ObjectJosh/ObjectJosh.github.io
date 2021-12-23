@@ -13,6 +13,7 @@ import Plane from './components/subcomponents/Plane';
 
 // Includes
 import './Assets/css/default.min.css'
+import exit_img from './img/Exit.png';
 
 class App extends Component {
   constructor(props) {
@@ -47,9 +48,6 @@ class App extends Component {
         this.setState({
           showComputer: true,
         }, () => {
-          // renderOpaque();
-          // console.log(this.state.show);
-          // console.log(target)
           this.showOpaque();
         });
         break;
@@ -65,6 +63,16 @@ class App extends Component {
     }
   }
 
+  updateEvent(target, bool) {
+    switch(target) {
+      case "plane-submit":
+        this.setState({
+          showPlaneSubmit: bool,
+        });
+        break;
+    }
+  }
+
   showOpaque() {
     this.setState({
       showOpaque: true,
@@ -76,8 +84,8 @@ class App extends Component {
     // Components
     const renderOpaque = () => {
       return (
-        <div className="opaque clickable" onClick={() => this.clickEvent("opaque")}>
-          {console.log("showing")}
+        <div className="opaque">
+          <img src={exit_img} className="exit clickable" onClick={() => this.clickEvent("opaque")}></img>
         </div>
       );
     }
@@ -94,7 +102,9 @@ class App extends Component {
         <Banner></Banner>
         {this.state.showOpaque ? renderOpaque() : null}
         {this.state.showComputer ? <Computer></Computer> : null}
-        {this.state.showPlane ? <Plane></Plane> : null}
+        {this.state.showPlane ? <Plane showElement={(e) => this.updateEvent("plane-submit", e)}></Plane> : null}
+        {this.state.showPlane && this.state.showPlaneSubmit ? <button className="button-plane-submit">Send</button> : null}
+        {/* <button className="button-plane-submit">Send</button> */}
       </div>
     );
   }

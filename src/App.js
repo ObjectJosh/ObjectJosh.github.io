@@ -82,11 +82,9 @@ class App extends Component {
 
   render() {
     // Components
-    const renderOpaque = () => {
+    const renderExitButton = () => {
       return (
-        <div className="opaque">
-          <img src={exit_img} className="exit clickable" onClick={() => this.clickEvent("opaque")}></img>
-        </div>
+        <img src={exit_img} className="exit clickable" onClick={() => this.clickEvent("opaque")}></img> 
       );
     }
 
@@ -100,11 +98,12 @@ class App extends Component {
         <Shelf clickHandler={() => this.clickEvent("plane")}></Shelf>
         <Window></Window>
         <Banner></Banner>
-        {this.state.showOpaque ? renderOpaque() : null}
+        {this.state.showOpaque ? <div className="opaque"></div> : null}
         {this.state.showComputer ? <Computer></Computer> : null}
         {this.state.showPlane ? <Plane showElement={(e) => this.updateEvent("plane-submit", e)}></Plane> : null}
         {this.state.showPlane && this.state.showPlaneSubmit ? <button className="button-plane-submit">Send</button> : null}
         {/* <button className="button-plane-submit">Send</button> */}
+        {this.state.showOpaque ? renderExitButton() : null}
       </div>
     );
   }

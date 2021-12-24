@@ -231,19 +231,132 @@ ul {
     .plane {
         width: 40%;
         transform: translate(15%, -205%);
+        transition: transform .5s ease-in-out;
     }
+    .plane:hover {
+        transform: translate(15%, -205%) rotate(15deg);
+    }
+
     .linkedin {
         width: 25%;
         transform: translate(30%, 45%);
+        --x: 30%;
+        --y: 45%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -5%; // --y + -50%
+        --changeY2: 35%; // --y + -10%
+        --changeY3: 40%; // --y + -5%
+        // animation-iteration-count: unset;
     }
+    // .linkedin:hover {
+    //     animation: bounce;
+    //     animation-duration: 2s;
+    //     animation-iteration-count: infinite;
+    // }
+    // .linkedin[test='1'] {
+    //     animation: bounce;
+    //     animation-duration: 2s;
+    //     animation-iteration-count: infinite;
+    // }
+    // .linkedin[test2='1'] {
+    //     // animation: bounce;
+    //     // animation-duration: 2s;
+    //     animation-iteration-count: unset !important;
+    //     // animation-play-state: paused;
+    // }
     .github {
         width: 25%;
         transform: translate(150%, 45%);
+        --x: 150%;
+        --y: 45%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -5%; // --y + -50%
+        --changeY2: 35%; // --y + -10%
+        --changeY3: 40%; // --y + -5%
     }
+    .gmail-container {
+        width: min-content;
+        height: min-content;
+        transform: translate(270%, 50%);
+        background-color: white;
+    }
+    // .gmail {
+    //     width: 25%;
+    //     transform: translate(270%, 50%);
+    //     --x: 270%;
+    //     --y: 50%;
+    //     // Can't do operation in-line due to variables being macros
+    //     --changeY1: 0%; // --y + -50%
+    //     --changeY2: 40%; // --y + -10%
+    //     --changeY3: 45%; // --y + -5%
+    // }
     .gmail {
         width: 25%;
-        transform: translate(270%, 45%);
+        transform: translate(270%, 50%);
+        --x: 270%;
+        --y: 50%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: 0%; // --y + -50%
+        --changeY2: 40%; // --y + -10%
+        --changeY3: 45%; // --y + -5%
+        --x2: 290%;
+        --y2: 100%;
     }
+    .bounce {
+        animation: bounce;
+        animation-duration: 2s;
+        // animation-iteration-count: infinite;
+    }
+    @keyframes bounce {
+        0%   { transform: translate(var(--x), var(--y)) scale(1,1) }
+        10%  { transform: translate(var(--x), var(--y)) scale(1.1,.9)}
+        30%  { transform: translate(var(--x), var(--changeY1)) scale(.9,1.1) }
+        50%  { transform: translate(var(--x), var(--y)) scale(1.05,.95) }
+        60%  { transform: translate(var(--x), var(--changeY2)) scale(.95,1.05) }
+        65%  { transform: translate(var(--x), var(--changeY3)) scale(1,1) }
+        70%  { transform: translate(var(--x), var(--y)) scale(1,1) }
+        100% { transform: translate(var(--x), var(--y)) scale(1,1) }
+    }
+
+    .message {
+        width: 45%;
+        transform: translate(135%, 60%);
+        animation: fadeOut 2s;
+        -webkit-animation: fadeOut 2s;
+        -moz-animation: fadeOut 2s;
+        -o-animation: fadeOut 2s;
+        -ms-animation: fadeOut 2s;
+        animation-timing-function: ease-in;
+        -webkit-animation-timing-function: ease-in;
+        -moz-animation-timing-function: ease-in;
+        -o-animation-timing-function: ease-in;
+        -ms-animation-timing-function: ease-in;
+        @keyframes fadeOut {
+          0% {opacity:1;}
+          100% {opacity:0;}
+        }
+
+        @-moz-keyframes fadeOut {
+          0% {opacity:1;}
+          100% {opacity:0;}
+        }
+        
+        @-webkit-keyframes fadeOut {
+          0% {opacity:1;}
+          100% {opacity:0;}
+        }
+        
+        @-o-keyframes fadeOut {
+          0% {opacity:1;}
+          100% {opacity:0;}
+        }
+        
+        @-ms-keyframes fadeOut {
+          0% {opacity:1;}
+          100% {opacity:0;}
+        }
+    }
+      
 }
 
 

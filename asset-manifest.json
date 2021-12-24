@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.dfe8742d.css",
-    "main.js": "/static/js/main.7cb42543.js",
+    "main.css": "/static/css/main.c81c5baf.css",
+    "main.js": "/static/js/main.c749b240.js",
     "static/js/787.9b9c0edf.chunk.js": "/static/js/787.9b9c0edf.chunk.js",
     "static/media/Airplane_Large_Written.png": "/static/media/Airplane_Large_Written.4768b5024f7d0e348702.png",
     "static/media/Under_Construction.png": "/static/media/Under_Construction.c3e7e3bffeeb3e8953ac.png",
     "static/media/Shelf.png": "/static/media/Shelf.41dd8c3a46e29354ab12.png",
     "static/media/Background.png": "/static/media/Background.ce30975d71ccd84e5018.png",
     "static/media/Desk_Items.png": "/static/media/Desk_Items.53a77655ced160c1882f.png",
+    "static/media/Rock.png": "/static/media/Rock.b2079f653b7de75f6c33.png",
     "static/media/Airplane.png": "/static/media/Airplane.02b4f7ec69c529dfde0f.png",
     "static/media/Gmail.png": "/static/media/Gmail.d13bdff289f49945ab16.png",
     "static/media/Gmail_Clipboard.png": "/static/media/Gmail_Clipboard.b31b3f0232bfdb58d8de.png",
@@ -25,12 +26,12 @@
     "static/media/Computer_Close.png": "/static/media/Computer_Close.26d4a087d809b4cdc061.png",
     "static/media/singify.png": "/static/media/singify.7b012c036614e9a95c62.png",
     "index.html": "/index.html",
-    "main.dfe8742d.css.map": "/static/css/main.dfe8742d.css.map",
-    "main.7cb42543.js.map": "/static/js/main.7cb42543.js.map",
+    "main.c81c5baf.css.map": "/static/css/main.c81c5baf.css.map",
+    "main.c749b240.js.map": "/static/js/main.c749b240.js.map",
     "787.9b9c0edf.chunk.js.map": "/static/js/787.9b9c0edf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dfe8742d.css",
-    "static/js/main.7cb42543.js"
+    "static/css/main.c81c5baf.css",
+    "static/js/main.c749b240.js"
   ]
 }

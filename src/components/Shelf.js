@@ -72,7 +72,7 @@ class Shelf extends Component {
         <img
           src={img}
           alt={altname}
-          className={`shelf-item clickable static ${name} ${state ? "bounce" : ""}`}
+          className={`shelf-item clickable ${name} ${state ? "bounce" : ""}`}
           onClick={() => this.handleClick(name)}
           onMouseOver={() => this.handleEvent(name, true)}
           onMouseOut={() => this.handleEvent(name, false)}
@@ -88,7 +88,7 @@ class Shelf extends Component {
         <img
           src={img}
           alt={altname}
-          className={`shelf-item clickable static ${name} ${state ? "bounce" : ""}`}
+          className={`shelf-item clickable ${name} ${state ? "bounce" : ""}`}
           onClick={() => this.handleClick(name)}
           onMouseOver={e => (this.handleEvent(name, true), e.currentTarget.src = gmail_clipboard_bold_img)}
           onMouseOut={e => (this.handleEvent(name, false), e.currentTarget.src = gmail_img)}

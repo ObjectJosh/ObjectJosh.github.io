@@ -123,10 +123,48 @@ ul {
 
     .mouse {
         position: absolute;
-        left: 82%;
-        top: 25%;
+        left: 81%;
+        top: 22%;
         transform: translate(-50%, -50%);
         width: 6%;
+    }
+
+    .circle {
+        animation: circle;
+        animation-duration: 3s;
+    }
+
+    @keyframes circle {
+        0% { transform: translateY(-50%) rotate(0deg) translateX(-50%) rotate(0deg); }
+        100% { transform: translateY(-50%) rotate(360deg) translateX(-50%) rotate(-360deg); }
+    }
+
+    @-moz-keyframes circle {
+        0% { -moz-transform: translateY(-50%) rotate(0deg) translateX(-50%) rotate(0deg); }
+        100% { -moz-transform: translateY(-50%) rotate(360deg) translateX(-50%) rotate(-360deg); }
+    }
+
+    @-webkit-keyframes circle {
+        0% { -webkit-transform: translateY(-50%) rotate(0deg) translateX(-50%) rotate(0deg); }
+        100% { -webkit-transform: translateY(-50%) rotate(360deg) translateX(-50%) rotate(-360deg); }
+    }
+
+    @-o-keyframes circle {
+        0% { -o-transform: translateY(-50%) rotate(0deg) translateX(-50%) rotate(0deg); }
+        100% { -o-transform: translateY(-50%) rotate(360deg) translateX(-50%) rotate(-360deg); }
+    }
+
+    @-ms-keyframes circle {
+        0% { -ms-transform: translateY(-50%) rotate(0deg) translateX(-50%) rotate(0deg); }
+        100% { -ms-transform: translateY(-50%) rotate(360deg) translateX(-50%) rotate(-360deg); }
+    }
+
+    .rock {
+        position: absolute;
+        left: 21%;
+        top: 2%;
+        transform: translate(-50%, -50%);
+        width: 10%;
     }
 }
 

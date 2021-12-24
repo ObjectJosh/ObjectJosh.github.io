@@ -12,7 +12,7 @@ import Plane from './components/subcomponents/Plane';
 
 
 // Includes
-import './Assets/css/default.min.css'
+import './assets/css/default.min.css'
 import exit_img from './img/Exit.png';
 
 class App extends Component {

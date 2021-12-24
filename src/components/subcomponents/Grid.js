@@ -1,7 +1,7 @@
 /* Source: https://codemyui.com/switch-between-mason-grid-and-slider-view/ */
 import React, { Component } from 'react';
 
-import '../Assets/css/gridstyle.css'
+import '../assets/css/gridstyle.css'
 import singify_img from './singify.png'
 import vaxbot_img from './bot.gif'
 // import weblock_img from './weblock.png'

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import computer_close_img from '../img/Computer_Close.png';
 import google_logo_img from '../img/Google_Logo.png';
-import Grid from './Grid';
+import Grid from './subcomponents/Grid';
 
 
 class Computer extends Component {

@@ -25,7 +25,6 @@ class Shelf extends Component {
     }
   }
   handleClick(target) {
-    // alert("clicked")
     switch(target) {
       case "linkedin":
         window.open("https://www.linkedin.com/in/-joshuawong/", "_blank");

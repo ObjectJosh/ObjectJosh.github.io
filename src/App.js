@@ -10,10 +10,10 @@ import Window from './components/Window';
 import Banner from './components/Banner';
 import Plane from './components/subcomponents/Plane';
 
-
 // Includes
 import './assets/css/default.min.css'
 import exit_img from './img/Exit.png';
+
 
 class App extends Component {
   constructor(props) {

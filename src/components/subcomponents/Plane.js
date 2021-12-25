@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import plane_large_image from '../../img/Airplane_Large_Written.png';
-// import google_logo_img from '../img/Google_Logo.png';
-// import Grid from './Grid';
 
 
 class Plane extends Component {
   constructor(props) {
     super(props);
-    // this.handleClick = this.handleClick.bind(this);
     this.state = {
       name: '',
       email: '',
@@ -15,7 +12,6 @@ class Plane extends Component {
     }
   }
   handleClick(target) {
-    // alert("clicked")
     switch(target) {
       case "submit":
         // alert(this.state.name)
@@ -27,22 +23,16 @@ class Plane extends Component {
     this.props.showElement(false);
     switch(target) {
       case "name":
-        this.setState({
-          name: value,
-        });
+        this.setState({ name: value });
         break;
       case "email":
-        this.setState({
-          email: value,
-        });
+        this.setState({ email: value });
         break;
       case "message":
-        this.setState({
-          message: value,
-        });
+        this.setState({ message: value });
         break;
       default:
-        alert("Something went wrong")
+        alert("Something went wrong");
     }
   }
 
@@ -60,7 +50,6 @@ class Plane extends Component {
   }
 
   render() {
-
     const renderNameField = () => {
         return (
             <input
@@ -115,8 +104,6 @@ class Plane extends Component {
     const renderForm = () => {
       return (
         <div className="form-region">
-          {/* <img src={plane_large_image} alt="Google Logo" className="google"></img> */}
-          {/* <h1 className="form-header">Shoot me a message!</h1> */}
           <div className="form-content">
             {renderNameField()}
             {renderEmailField()}
@@ -138,6 +125,4 @@ class Plane extends Component {
   }
 }
 
-
 export default Plane;
-

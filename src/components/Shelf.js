@@ -99,19 +99,27 @@ class Shelf extends Component {
       );
     }
 
+    const renderClipboardMessage = () => {
+      return (
+        <img src={clipboard_message_img}
+          alt="Clipboard Message"
+          className="shelf-item message"
+          onAnimationEnd={() => this.handleEvent("animation end")}
+          fade={this.state.fade}
+          >
+        </img>
+      );
+    }
+
     return (
         <div className="shelf-container">
-          {/* on animation end set state to done animating
-              on off hover set state to done hovering
-              on animation end && hover state off, then change class
-          */}
             <img src={shelf_img} alt="Shelf" className="shelf"></img>
             <img src={books_img} alt="Books" className="shelf-item books"></img>
             <img src={plane_img} alt="Plane" className="shelf-item clickable plane" onClick={this.props.clickHandler}></img>
             {renderBoxItem("linkedin", "LinkedIn", linkedin_img, this.state.linkedin || this.state.linkedinAnimation)}
             {renderBoxItem("github", "GitHub", github_img, this.state.github || this.state.githubAnimation)}
             {renderHoverBoxItem("gmail", "Gmail", gmail_img, this.state.gmail || this.state.gmailAnimation)}
-            {this.state.fade ? <img src={clipboard_message_img} alt="Clipboard Message" className="shelf-item message" onAnimationEnd={() => this.handleEvent("animation end")} fade={this.state.fade}></img> : null}
+            {this.state.fade ? renderClipboardMessage() : null}
         </div>
     );
   }

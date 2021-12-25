@@ -52,6 +52,5 @@ class Computer extends Component {
   }
 }
 
-
 export default Computer;
 

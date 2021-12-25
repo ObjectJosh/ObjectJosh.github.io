@@ -554,3 +554,16 @@ ul {
     top: 10%;
     right: 30%;
 }
+
+.banner:hover {
+    animation: tilt;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+@keyframes tilt {    
+    0% { transform: translateX(-50%) rotate(0deg) translateX(50%) }
+    20% { transform:  translateX(-50%) rotate(5deg) translateX(50%) }
+    80% { transform:  translateX(-50%) rotate(-5deg) translateX(50%) }
+    100% { transform:  translateX(-50%) rotate(0deg) translateX(50%) }
+}

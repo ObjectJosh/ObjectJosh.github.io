@@ -67,10 +67,8 @@ ul {
     right: 0;
     top: 0;
     width: 5vw;
-    // height: 5vw;
     margin-top: 1%;
     margin-right: 1%;
-    // z-index: 10;
 }
 
 .input-bubble {
@@ -166,6 +164,124 @@ ul {
         transform: translate(-50%, -50%);
         width: 10%;
     }
+
+    .cup {
+        position: absolute;
+        left: 80%;
+        top: -1%;
+        transform: translate(-50%, -50%);
+        width: 11%;
+    }
+
+    .bot {
+        position: absolute;
+        left: 79%;
+        top: -10%;
+        transform: translate(-50%, -50%);
+        width: 13%;
+        --x: -50%;
+        --y: -50%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -80%; // --y + -50%
+        --changeY2: -60%; // --y + -10%
+        --changeY3: -55%; // --y + -5%
+        // opacity: 0;
+        // transition: opacity .5s ease-in-out;
+        --delay: 0s;
+    }
+
+    // .bot[]
+
+    // .bot:active {
+    //     opacity: 1;
+    // }
+
+    .bot-hand {
+        position: absolute;
+        left: 79%;
+        top: -5%;
+        width: 4%;
+    }
+
+    .hand-left {
+        transform: translate(-170%, -50%);
+        --x: -170%;
+        --y: -50%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -100%; // --y + -50%
+        --changeY2: -60%; // --y + -10%
+        --changeY3: -55%; // --y + -5%
+        --delay: 0.1s;
+    }
+
+    .hand-right {
+        transform: translate(70%, -50%);
+        --x: 70%;
+        --y: -50%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -100%; // --y + -50%
+        --changeY2: -60%; // --y + -10%
+        --changeY3: -55%; // --y + -5%
+        --delay: 0.3s;
+    }
+
+    .bot-foot {
+        position: absolute;
+        left: 79%;
+        top: 0%;
+        width: 4%;
+        // opacity: 0;
+        --delay: 0s;
+    }
+
+    .foot-left {
+        transform: translate(-130%, -50%);
+        --x: -130%;
+        --y: -50%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -100%; // --y + -50%
+        --changeY2: -60%; // --y + -10%
+        --changeY3: -55%; // --y + -5%
+    }
+
+    .foot-right {
+        transform: translate(10%, -50%);
+        --x: 10%;
+        --y: -50%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -100%; // --y + -50%
+        --changeY2: -60%; // --y + -10%
+        --changeY3: -55%; // --y + -5%
+    }
+
+    .sway {
+        animation: fadeIn 0.2s linear, sway 2s linear var(--delay);
+    }
+
+    .fadeOut {
+        animation: fadeOut 0.5s linear;
+    }
+
+    @keyframes fadeIn {
+        0%   { opacity: 0 }
+        100% { opacity: 1 }
+    }
+
+    @keyframes fadeOut {
+        0%   { opacity: 1 }
+        100% { opacity: 0 }
+    }
+
+    @keyframes sway {
+        0%   { transform: translate(var(--x), var(--y)) scale(1, 1) }
+        10%  { transform: translate(var(--x), var(--y)) scale(1.1, .9)}
+        30%  { transform: translate(var(--x), var(--changeY1)) scale(.9, 1.1) rotate(10deg) }
+        50%  { transform: translate(var(--x), var(--y)) scale(1.05, .95) }
+        60%  { transform: translate(var(--x), var(--changeY2)) scale(.95, 1.05) rotate(-10deg) }
+        65%  { transform: translate(var(--x), var(--changeY3)) scale(1, 1) }
+        70%  { transform: translate(var(--x), var(--y)) scale(1, 1) }
+        100% { transform: translate(var(--x), var(--y)) scale(1, 1) }
+    }
 }
 
 .computer-region {
@@ -221,12 +337,12 @@ ul {
                 padding-right: 15px;
                 outline: none;
                 font-size: 14px;
-    
             }
     
             .button-left {
                 margin-right: 10px;
             }
+
             .button-right {
                 margin-left: 10px;
             }
@@ -284,24 +400,8 @@ ul {
         --changeY1: -5%; // --y + -50%
         --changeY2: 35%; // --y + -10%
         --changeY3: 40%; // --y + -5%
-        // animation-iteration-count: unset;
     }
-    // .linkedin:hover {
-    //     animation: bounce;
-    //     animation-duration: 2s;
-    //     animation-iteration-count: infinite;
-    // }
-    // .linkedin[test='1'] {
-    //     animation: bounce;
-    //     animation-duration: 2s;
-    //     animation-iteration-count: infinite;
-    // }
-    // .linkedin[test2='1'] {
-    //     // animation: bounce;
-    //     // animation-duration: 2s;
-    //     animation-iteration-count: unset !important;
-    //     // animation-play-state: paused;
-    // }
+
     .github {
         width: 25%;
         transform: translate(150%, 45%);
@@ -312,22 +412,7 @@ ul {
         --changeY2: 35%; // --y + -10%
         --changeY3: 40%; // --y + -5%
     }
-    .gmail-container {
-        width: min-content;
-        height: min-content;
-        transform: translate(270%, 50%);
-        background-color: white;
-    }
-    // .gmail {
-    //     width: 25%;
-    //     transform: translate(270%, 50%);
-    //     --x: 270%;
-    //     --y: 50%;
-    //     // Can't do operation in-line due to variables being macros
-    //     --changeY1: 0%; // --y + -50%
-    //     --changeY2: 40%; // --y + -10%
-    //     --changeY3: 45%; // --y + -5%
-    // }
+
     .gmail {
         width: 25%;
         transform: translate(270%, 50%);
@@ -337,23 +422,21 @@ ul {
         --changeY1: 0%; // --y + -50%
         --changeY2: 40%; // --y + -10%
         --changeY3: 45%; // --y + -5%
-        --x2: 290%;
-        --y2: 100%;
     }
     .bounce {
         animation: bounce;
         animation-duration: 2s;
-        // animation-iteration-count: infinite;
     }
+
     @keyframes bounce {
-        0%   { transform: translate(var(--x), var(--y)) scale(1,1) }
-        10%  { transform: translate(var(--x), var(--y)) scale(1.1,.9)}
-        30%  { transform: translate(var(--x), var(--changeY1)) scale(.9,1.1) }
-        50%  { transform: translate(var(--x), var(--y)) scale(1.05,.95) }
-        60%  { transform: translate(var(--x), var(--changeY2)) scale(.95,1.05) }
-        65%  { transform: translate(var(--x), var(--changeY3)) scale(1,1) }
-        70%  { transform: translate(var(--x), var(--y)) scale(1,1) }
-        100% { transform: translate(var(--x), var(--y)) scale(1,1) }
+        0%   { transform: translate(var(--x), var(--y)) scale(1, 1) }
+        10%  { transform: translate(var(--x), var(--y)) scale(1.1, .9)}
+        30%  { transform: translate(var(--x), var(--changeY1)) scale(.9, 1.1) }
+        50%  { transform: translate(var(--x), var(--y)) scale(1.05, .95) }
+        60%  { transform: translate(var(--x), var(--changeY2)) scale(.95, 1.05) }
+        65%  { transform: translate(var(--x), var(--changeY3)) scale(1, 1) }
+        70%  { transform: translate(var(--x), var(--y)) scale(1, 1) }
+        100% { transform: translate(var(--x), var(--y)) scale(1, 1) }
     }
 
     .message {
@@ -369,34 +452,18 @@ ul {
         -moz-animation-timing-function: ease-in;
         -o-animation-timing-function: ease-in;
         -ms-animation-timing-function: ease-in;
-        @keyframes fadeOut {
-          0% {opacity:1;}
-          100% {opacity:0;}
-        }
 
-        @-moz-keyframes fadeOut {
-          0% {opacity:1;}
-          100% {opacity:0;}
-        }
+        @keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
+
+        @-moz-keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
         
-        @-webkit-keyframes fadeOut {
-          0% {opacity:1;}
-          100% {opacity:0;}
-        }
+        @-webkit-keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
         
-        @-o-keyframes fadeOut {
-          0% {opacity:1;}
-          100% {opacity:0;}
-        }
+        @-o-keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
         
-        @-ms-keyframes fadeOut {
-          0% {opacity:1;}
-          100% {opacity:0;}
-        }
+        @-ms-keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
     }
-      
 }
-
 
 /* Plane Closeup Region  */
 .plane-region {

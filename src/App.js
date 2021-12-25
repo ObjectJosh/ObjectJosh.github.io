@@ -100,7 +100,7 @@ class App extends Component {
         <Banner></Banner>
         {this.state.showOpaque ? <div className="opaque"></div> : null}
         {this.state.showComputer ? <Computer></Computer> : null}
-        {this.state.showPlane ? <Plane showElement={(e) => this.updateEvent("plane-submit", e)}></Plane> : null}
+        {this.state.showPlane ? <Plane showElement={e => this.updateEvent("plane-submit", e)}></Plane> : null}
         {this.state.showPlane && this.state.showPlaneSubmit ? <button className="button-plane-submit">Send</button> : null}
         {/* <button className="button-plane-submit">Send</button> */}
         {this.state.showOpaque ? renderExitButton() : null}

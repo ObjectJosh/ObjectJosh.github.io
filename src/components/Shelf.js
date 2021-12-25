@@ -15,7 +15,7 @@ class Shelf extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.state = {
       showPlane: false,
-      fade: 0,
+      fade: false,
       linkedin: false,
       github: false,
       gmail: false,

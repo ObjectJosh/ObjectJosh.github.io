@@ -87,15 +87,35 @@ class Desk extends Component {
       });
     }
   }
+
+  handleClick(target) {
+    switch(target) {
+      case "hello world":
+        window.open("https://youtu.be/Yw6u6YkTgQ4", "_blank");
+        break;
+      default:
+        console.error("Something went wrong");
+    }
+  }
   
   render() {
     const renderBot = () => {
       return (
         <div>
-          <img src={hello_bot_foot_img} alt="Hello World Bot Left Foot" className={`bot-foot foot-left ${this.state.showBot ? "sway" : "fadeOut"}`}></img>
-          <img src={hello_bot_foot_img} alt="Hello World Bot Right Foot" className={`bot-foot foot-right ${this.state.showBot ? "sway" : "fadeOut"}`}></img>
-          <img src={hello_bot_img} alt="Hello World Bot" className={`bot ${(this.state.showBot) ? "sway" : "fadeOut"}`}
+          <img src={hello_bot_foot_img} alt="Hello World Bot Left Foot"
+            className={`bot-foot foot-left clickable ${this.state.showBot ? "sway" : "fadeOut"}`}
+            onClick={() => this.handleClick("hello world")}
+            >
+          </img>
+          <img src={hello_bot_foot_img} alt="Hello World Bot Right Foot"
+            className={`bot-foot foot-right clickable ${this.state.showBot ? "sway" : "fadeOut"}`}
+            onClick={() => this.handleClick("hello world")}
+            >
+          </img>
+          <img src={hello_bot_img} alt="Hello World Bot"
+            className={`bot clickable ${(this.state.showBot) ? "sway" : "fadeOut"}`}
             onAnimationStart={() => this.handleEvent("botAnimation", true)}
+            onClick={() => this.handleClick("hello world")}
             >
           </img>
         </div>
@@ -105,9 +125,15 @@ class Desk extends Component {
     const renderBotHands = () => {
       return (
         <div>
-          <img src={hello_bot_hand_img} alt="Hello World Bot Left Hand" className={`bot-hand hand-left ${this.state.showBot ? "sway" : "fadeOut"}`}></img>
-          <img src={hello_bot_hand_img} alt="Hello World Bot Right Hand" className={`bot-hand hand-right ${this.state.showBot ? "sway" : "fadeOut"}`}
-              onAnimationEnd={() => this.handleEvent("botAnimation", false)}
+          <img src={hello_bot_hand_img} alt="Hello World Bot Left Hand"
+            className={`bot-hand hand-left clickable ${this.state.showBot ? "sway" : "fadeOut"}`}
+            onClick={() => this.handleClick("hello world")}
+            >
+          </img>
+          <img src={hello_bot_hand_img} alt="Hello World Bot Right Hand"
+            className={`bot-hand hand-right clickable ${this.state.showBot ? "sway" : "fadeOut"}`}
+            onAnimationEnd={() => this.handleEvent("botAnimation", false)}
+            onClick={() => this.handleClick("hello world")}
             >
           </img>
         </div>
@@ -128,9 +154,10 @@ class Desk extends Component {
 
     const renderCup = () => {
       return (
-        <img src={cup_img} alt="Cup" className="cup"
+        <img src={cup_img} alt="Cup" className="cup clickable"
           onMouseOver={() => this.handleEvent("cup", true)}
           onMouseOut={() => this.handleEvent("cup", false)}
+          onClick={() => this.handleClick("hello world")}
           >
         </img>
       );

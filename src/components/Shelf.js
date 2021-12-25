@@ -5,7 +5,6 @@ import plane_img from "../img/Airplane.png";
 import linkedin_img from "../img/LinkedIn.png";
 import github_img from "../img/GitHub.png";
 import gmail_img from "../img/Gmail.png";
-import gmail_clipboard_img from "../img/Gmail_Clipboard.png";
 import gmail_clipboard_bold_img from "../img/Gmail_Clipboard_Bold.png";
 import clipboard_message_img from "../img/Clipboard_Message.png";
 
@@ -36,6 +35,8 @@ class Shelf extends Component {
         navigator.clipboard.writeText("joshwong74@gmail.com");
         this.setState({ fade: true })
         break;
+      default:
+        console.error("Something went wrong");
     }
   }
 
@@ -62,6 +63,8 @@ class Shelf extends Component {
       case "gmailAnimation":
         this.setState({ "gmailAnimation": bool })
         break;
+      default:
+        console.error("Something went wrong");
     }
   }
 
@@ -89,8 +92,8 @@ class Shelf extends Component {
           alt={altname}
           className={`shelf-item clickable ${name} ${state ? "bounce" : ""}`}
           onClick={() => this.handleClick(name)}
-          onMouseOver={e => (this.handleEvent(name, true), e.currentTarget.src = gmail_clipboard_bold_img)}
-          onMouseOut={e => (this.handleEvent(name, false), e.currentTarget.src = gmail_img)}
+          onMouseOver={e => { this.handleEvent(name, true); e.currentTarget.src = gmail_clipboard_bold_img }}
+          onMouseOut={e => { this.handleEvent(name, false); e.currentTarget.src = gmail_img }}
           onAnimationStart={() => this.handleEvent(name + "Animation", true)}
           onAnimationEnd={() => this.handleEvent(name + "Animation", false)}
           >

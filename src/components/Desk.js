@@ -34,6 +34,8 @@ class Desk extends Component {
       case "botAnimation":
         this.handleBotAnimation(bool);
         break;
+      default:
+        console.error("Something went wrong");
     }
   }
 

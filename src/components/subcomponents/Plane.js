@@ -16,6 +16,8 @@ class Plane extends Component {
       case "submit":
         // alert(this.state.name)
         break;
+      default:
+        console.error("Something went wrong");
     }
   }
 
@@ -32,7 +34,7 @@ class Plane extends Component {
         this.setState({ message: value });
         break;
       default:
-        alert("Something went wrong");
+        console.error("Something went wrong");
     }
   }
 

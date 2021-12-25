@@ -22,6 +22,8 @@ class Computer extends Component {
           showAll: true,
         })
         break;
+      default:
+        console.error("Something went wrong");
     }
   }
   render() {

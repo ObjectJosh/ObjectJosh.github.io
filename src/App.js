@@ -40,6 +40,9 @@ class App extends Component {
         break;
       case "plane":
         this.setState({ showPlane: true }, () => { this.setState({ showOpaque: true }) });
+        break;
+      default:
+        console.error("Something went wrong");
     }
   }
 
@@ -48,6 +51,8 @@ class App extends Component {
       case "plane-submit":
         this.setState({ showPlaneSubmit: bool });
         break;
+      default:
+        console.error("Something went wrong");
     }
   }
 
@@ -55,7 +60,7 @@ class App extends Component {
     // Components
     const renderExitButton = () => {
       return (
-        <img src={exit_img} className="exit clickable" onClick={() => this.clickEvent("opaque")}></img> 
+        <img src={exit_img} alt="Close Button" className="exit clickable" onClick={() => this.clickEvent("opaque")}></img> 
       );
     }
 

@@ -24,14 +24,17 @@ class Grid extends Component {
         this.setState({
           grid: false,
         })
+        break;
+      default:
+        console.error("Something went wrong");
     }
   }
   
   render() {
-    const Project = (name, img) => {
+    const Project = (name, image) => {
       return (
         <p>
-          {img ? <img src={img}></img> : null} {/*<div className="blank"></div>*/}
+          {image ? <img src={image} alt={`${name} Img`}></img> : null} {/*<div className="blank"></div>*/}
           <span></span>
           <span className="short"></span>
           

@@ -14,13 +14,9 @@ class Computer extends Component {
     }
   }
   handleClick(target) {
-    // alert("clicked")
     switch(target) {
       case "all":
-        this.setState({
-          showHome: false,
-          showAll: true,
-        })
+        this.setState({ showHome: false, showAll: true })
         break;
       default:
         console.error("Something went wrong");

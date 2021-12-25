@@ -107,7 +107,6 @@ class Shelf extends Component {
           alt="Clipboard Message"
           className="shelf-item message"
           onAnimationEnd={() => this.handleEvent("animation end")}
-          fade={this.state.fade}
           >
         </img>
       );

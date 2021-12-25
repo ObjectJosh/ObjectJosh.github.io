@@ -9,14 +9,20 @@ class Banner extends Component {
       animating: false
     }
   }
-  handleClick() {
-    window.open("https://www.calpoly.edu/", "_blank");
+  handleClick(target) {
+    switch(target) {
+      case "banner":
+        window.open("https://www.calpoly.edu/", "_blank");
+        break;
+      default:
+        console.error("Something went wrong");
+    }
   }
   render() {
     return (
       <img src={banner_img} alt="Banner"
         className={`banner clickable ${this.state.animating ? "tilt" : ""}`}
-        onClick={() => this.handleClick()}
+        onClick={() => this.handleClick("banner")}
         onMouseOver={() => this.setState({ animating: true })}
         onAnimationEnd={() => this.setState({ animating: false })}
         >

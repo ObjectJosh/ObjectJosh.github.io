@@ -28,57 +28,28 @@ class App extends Component {
   }
 
   clickEvent(target) {
-    console.log(target);
     switch(target) {
       case "continue":
-        this.setState({
-          showSplash: false,
-        }, () => {
-        });
+        this.setState({ showSplash: false });
         break;
       case "opaque":
-        this.setState({
-          showOpaque: false,
-          showComputer: false,
-          showPlane: false,
-        }, () => {
-        });
+        this.setState({ showOpaque: false, showComputer: false, showPlane: false });
         break;
       case "computer":
-        this.setState({
-          showComputer: true,
-        }, () => {
-          this.showOpaque();
-        });
+        this.setState({ showComputer: true }, () => { this.setState({ showOpaque: true }) });
         break;
       case "plane":
-        this.setState({
-          showPlane: true,
-        }, () => {
-          this.showOpaque();
-        });
-      default:
-        // pass
-      
+        this.setState({ showPlane: true }, () => { this.setState({ showOpaque: true }) });
     }
   }
 
   updateEvent(target, bool) {
     switch(target) {
       case "plane-submit":
-        this.setState({
-          showPlaneSubmit: bool,
-        });
+        this.setState({ showPlaneSubmit: bool });
         break;
     }
   }
-
-  showOpaque() {
-    this.setState({
-      showOpaque: true,
-    })
-  }
-  
 
   render() {
     // Components

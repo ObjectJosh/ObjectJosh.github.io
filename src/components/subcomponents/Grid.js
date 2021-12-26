@@ -1,14 +1,18 @@
 /* Source: https://codemyui.com/switch-between-mason-grid-and-slider-view/ */
 import React, { Component } from 'react';
 
-import '../../assets/css/gridstyle.css'
-import singify_img from './singify.png'
-import vaxbot_img from './bot.gif'
+import '../../assets/css/gridstyle.css';
+import singify_img from './singify.png';
+import vaxbot_img from './bot.gif';
 // import weblock_img from './weblock.png'
+import photolink_img from './photolink.png';
+import scoop_img from './scoop.png';
 
 class Grid extends Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+    // this.handleEvent = this.handleEvent.bind(this);
     this.state = {
       grid: true,
     }
@@ -18,39 +22,49 @@ class Grid extends Component {
       case "grid":
         this.setState({
           grid: true,
-        })
+        });
         break;
       case "carousel":
         this.setState({
           grid: false,
-        })
+        });
         break;
       default:
         console.error("Something went wrong");
     }
   }
+
+  // handleEvent(event, target, state=true) {
+  //   switch(event) {
+  //     case "hoverCard":
+  //       state ? this.setState({ hoverCard: target }) : this.setState({ hoverCard: state})
+  //       break;
+  //     default:
+  //       console.error("Something went wrong");
+  //   }
+  // }
   
   render() {
     const Project = (name, image) => {
       return (
-        <p>
-          {image ? <img src={image} alt={`${name} Img`}></img> : null} {/*<div className="blank"></div>*/}
-          <span></span>
-          <span className="short"></span>
-          
-        </p>
+        <div className="card">
+            <img src={image} alt={`${name} Img`}></img>
+          <h1>{name}</h1> {/* Renders on card hover */}
+        </div>
       );
     }
 
     const renderGallery = () => {
       return (
         <div className="thumbs">  
-              {Project("Singify", singify_img)}
-              {Project("Covid Vaccine Bot", vaxbot_img)}
-              {Project("Weblock", )}
-              {Project("Singify", )}
-              {Project("Singify", )}
-          </div>
+          {Project("Singify", singify_img)}
+          {Project("Vaxbot", vaxbot_img)}
+          {Project("PhotoLink", photolink_img)}
+          {Project("Scoop", scoop_img)}
+          {/* {Project("Other", singify_img)} */}
+          
+          
+        </div>
       );
     }
 

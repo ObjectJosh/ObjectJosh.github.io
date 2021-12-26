@@ -42,34 +42,55 @@ body{
 }
 
 .thumbs{ /* scrollview  */
-    padding:10px 50px 30px 70px;
+    padding:10px 50px 0px 70px;
+    margin-top: 5%;
     margin-bottom: 400px;
     position: relative;
+	display: grid;
+	/* grid-template-columns: repeat(3, 1fr); */
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+	grid-auto-rows: auto;
+	grid-gap: 1rem;
 }
 
-.thumbs p, .thumbs p.floating-thumb{
-  background: #e3e5e9;
-  width: 27%;
-  height: 10%;
-  margin: 30px 30px 0 0;
+/* Gallery Card */
+.thumbs .card, .thumbs .card.floating-thumb{
+  background: white; /* GRAY #e3e5e9;*/
+  /* width: 100%; */
+  /* height: 100%; */
+  aspect-ratio: 1 / 1;
+  margin: 15px 15px 0px 15px;
   border-radius: 10px;
+  border: none;
   float: left;
   /* padding-b: 121px; */
   overflow: hidden;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.1));
+  margin-bottom: 60px;
+  /* height: 230px; */
 }
-.thumbs p img, p.floating-thumb img{
+.thumbs .card img, .card.floating-thumb img{
 	display: cover;
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    margin-bottom: 5%;
-    border-radius: 10px 10px 0 0;
+    /* margin-bottom: 5%; */
+    border-radius: 10px 10px 10px 10px;
     background-color: #c0dbfc;
 }
-
-.thumbs p div, p.floating-thumb div{
-    height: 18vw;
+.thumbs .card h1, .card.floating-thumb h1{
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	padding: 5% 12% 0% 12%;
+	/* text-align: center; */
+	font-size: 100%;
+	font-weight: 700;
+	/* padding-bottom: 100px; */
 }
+
+/* .thumbs .card div, .card.floating-thumb div{
+    height: 18vw;
+} */
 
 .floating-thumb{	
 	background: #e3e5e9;
@@ -95,22 +116,24 @@ body{
 	     -o-transition: all 400ms cubic-bezier(0,.93,.33,.99);
 		    transition: all 400ms cubic-bezier(0,.93,.33,.99);
 }
-.thumbs p span, p.floating-thumb span{
+.thumbs .card span, .card.floating-thumb span{ /* grid text icon box */
 	display:block;
 	height:10px;
 	margin:10px 20px;
 	background:#d2d4d9;
 	border-radius:2px;
 }
-.thumbs p span.short, p.floating-thumb span.short{width:50px;}
-.thumbs p:hover{
-	background:#dfe0e5;
-	cursor:pointer;
+.thumbs .card span.short, .card.floating-thumb span.short{width:50px;}
+.thumbs .card:hover, .thumbs .card.floating-thumb:hover{
+	margin: 0px 0px 0px 0px;
+	aspect-ratio: auto !important;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	/* cursor:pointer;
 	-webkit-transition: all 100ms ease-out;
 	   -moz-transition: all 100ms ease-out;
 	    -ms-transition: all 100ms ease-out;
 	     -o-transition: all 100ms ease-out;
-		    transition: all 100ms ease-out;
+		    transition: all 100ms ease-out; */
 	
 }
 #headline{padding:39px 50px 0px 70px;}
@@ -197,7 +220,7 @@ body{
 	text-align:center;
 	float:left;
 }
-#carousel .innerCarousel div p{
+#carousel .innerCarousel div p{ /* carousel div */
   background: #e3e5e9;
   width: 220px;
   height: 73px;

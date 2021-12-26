@@ -9,10 +9,66 @@ header {
 
 body {
     background: url("../../img/Background.png") no-repeat center center fixed; 
-    -webkit-background-size: dw;
+    -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.splash {
+    position: fixed;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+
+    .splash-content {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        flex-direction: column;
+
+        .constructionimg {
+            width: 40%;
+            transform: translate(-50%, -60%);
+            float: center;
+        }
+
+        .splash-continue {
+            position: absolute;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            border-radius: 10vh;
+            outline: none;
+            border: none;
+            font-size: 3vh;
+            padding: 10px 50px 10px 50px;
+            font-weight: 800;
+        }
+    }
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.exit {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 5vw;
+    margin-top: 1%;
+    margin-right: 1%;
 }
 
 .input-bubble {
@@ -32,12 +88,10 @@ body {
 .opaque {
     position: fixed;
     z-index: 0;
-    background-color: white;
-    opacity: 0.5;
+    background-color: rgba(255, 255, 255, 0.5);
     width: 100vw;
     height: 100vh;
     left: 0;
-    cursor: pointer;
 }
 
 .region-desk {
@@ -63,15 +117,170 @@ body {
         top: -5%;
         transform: translate(-50%, -50%);
         width: 50%;
-        cursor: pointer;
     }
 
     .mouse {
         position: absolute;
-        left: 82%;
-        top: 25%;
+        left: 81%;
+        top: 22%;
         transform: translate(-50%, -50%);
         width: 6%;
+    }
+
+    .circle {
+        animation: circle;
+        animation-duration: 3s;
+    }
+
+    @keyframes circle {
+        0% { transform: translateY(-50%) rotate(0deg) translateX(-50%) rotate(0deg); }
+        100% { transform: translateY(-50%) rotate(360deg) translateX(-50%) rotate(-360deg); }
+    }
+
+    @-moz-keyframes circle {
+        0% { -moz-transform: translateY(-50%) rotate(0deg) translateX(-50%) rotate(0deg); }
+        100% { -moz-transform: translateY(-50%) rotate(360deg) translateX(-50%) rotate(-360deg); }
+    }
+
+    @-webkit-keyframes circle {
+        0% { -webkit-transform: translateY(-50%) rotate(0deg) translateX(-50%) rotate(0deg); }
+        100% { -webkit-transform: translateY(-50%) rotate(360deg) translateX(-50%) rotate(-360deg); }
+    }
+
+    @-o-keyframes circle {
+        0% { -o-transform: translateY(-50%) rotate(0deg) translateX(-50%) rotate(0deg); }
+        100% { -o-transform: translateY(-50%) rotate(360deg) translateX(-50%) rotate(-360deg); }
+    }
+
+    @-ms-keyframes circle {
+        0% { -ms-transform: translateY(-50%) rotate(0deg) translateX(-50%) rotate(0deg); }
+        100% { -ms-transform: translateY(-50%) rotate(360deg) translateX(-50%) rotate(-360deg); }
+    }
+
+    .rock {
+        position: absolute;
+        left: 21%;
+        top: 2%;
+        transform: translate(-50%, -50%);
+        width: 10%;
+    }
+
+    .cup {
+        position: absolute;
+        left: 80%;
+        top: -1%;
+        transform: translate(-50%, -50%);
+        width: 11%;
+    }
+
+    .bot {
+        position: absolute;
+        left: 79%;
+        top: -10%;
+        transform: translate(-50%, -50%);
+        width: 13%;
+        --x: -50%;
+        --y: -50%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -80%; // --y + -50%
+        --changeY2: -60%; // --y + -10%
+        --changeY3: -55%; // --y + -5%
+        // opacity: 0;
+        // transition: opacity .5s ease-in-out;
+        --delay: 0s;
+    }
+
+    // .bot[]
+
+    // .bot:active {
+    //     opacity: 1;
+    // }
+
+    .bot-hand {
+        position: absolute;
+        left: 79%;
+        top: -5%;
+        width: 4%;
+    }
+
+    .hand-left {
+        transform: translate(-170%, -50%);
+        --x: -170%;
+        --y: -50%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -100%; // --y + -50%
+        --changeY2: -60%; // --y + -10%
+        --changeY3: -55%; // --y + -5%
+        --delay: 0.1s;
+    }
+
+    .hand-right {
+        transform: translate(70%, -50%);
+        --x: 70%;
+        --y: -50%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -100%; // --y + -50%
+        --changeY2: -60%; // --y + -10%
+        --changeY3: -55%; // --y + -5%
+        --delay: 0.3s;
+    }
+
+    .bot-foot {
+        position: absolute;
+        left: 79%;
+        top: 0%;
+        width: 4%;
+        // opacity: 0;
+        --delay: 0s;
+    }
+
+    .foot-left {
+        transform: translate(-130%, -50%);
+        --x: -130%;
+        --y: -50%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -100%; // --y + -50%
+        --changeY2: -60%; // --y + -10%
+        --changeY3: -55%; // --y + -5%
+    }
+
+    .foot-right {
+        transform: translate(10%, -50%);
+        --x: 10%;
+        --y: -50%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -100%; // --y + -50%
+        --changeY2: -60%; // --y + -10%
+        --changeY3: -55%; // --y + -5%
+    }
+
+    .sway {
+        animation: fadeIn 0.2s linear, sway 2s linear var(--delay);
+    }
+
+    .fadeOut {
+        animation: fadeOut 0.5s linear;
+    }
+
+    @keyframes fadeIn {
+        0%   { opacity: 0 }
+        100% { opacity: 1 }
+    }
+
+    @keyframes fadeOut {
+        0%   { opacity: 1 }
+        100% { opacity: 0 }
+    }
+
+    @keyframes sway {
+        0%   { transform: translate(var(--x), var(--y)) scale(1, 1) }
+        10%  { transform: translate(var(--x), var(--y)) scale(1.1, .9)}
+        30%  { transform: translate(var(--x), var(--changeY1)) scale(.9, 1.1) rotate(10deg) }
+        50%  { transform: translate(var(--x), var(--y)) scale(1.05, .95) }
+        60%  { transform: translate(var(--x), var(--changeY2)) scale(.95, 1.05) rotate(-10deg) }
+        65%  { transform: translate(var(--x), var(--changeY3)) scale(1, 1) }
+        70%  { transform: translate(var(--x), var(--y)) scale(1, 1) }
+        100% { transform: translate(var(--x), var(--y)) scale(1, 1) }
     }
 }
 
@@ -100,7 +309,8 @@ body {
         transform: translate(-50%, -80%);
         width: 87%;
         aspect-ratio: 1 / 0.5;
-        background-color: white;
+        // background-color: white;
+        background-color: #f7f7f7;
         border-radius: 50px;
         overflow-y: scroll;
         .google {
@@ -128,12 +338,12 @@ body {
                 padding-right: 15px;
                 outline: none;
                 font-size: 14px;
-    
             }
     
             .button-left {
                 margin-right: 10px;
             }
+
             .button-right {
                 margin-left: 10px;
             }
@@ -145,15 +355,185 @@ body {
     display: none;
 }
 
-
-.shelf {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
+.shelf-container {
     position: fixed;
-    bottom: 45%;
-    right: 5%;
+    width: 20%;
+    top: 35%;
+    right: -5%;
+    object-fit: contain;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    .shelf {
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .shelf-item {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 50%;
+        width: 50%;
+        transform: translate(50%, -50%);
+    }
+    .books {
+        width: 65%;
+        transform: translate(20%, -230%);
+    }
+    .plane {
+        width: 40%;
+        transform: translate(15%, -205%);
+        transition: transform .5s ease-in-out;
+    }
+    .plane:hover {
+        transform: translate(15%, -205%) rotate(15deg);
+    }
+
+    .linkedin {
+        width: 25%;
+        transform: translate(30%, 45%);
+        --x: 30%;
+        --y: 45%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -5%; // --y + -50%
+        --changeY2: 35%; // --y + -10%
+        --changeY3: 40%; // --y + -5%
+    }
+
+    .github {
+        width: 25%;
+        transform: translate(150%, 45%);
+        --x: 150%;
+        --y: 45%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: -5%; // --y + -50%
+        --changeY2: 35%; // --y + -10%
+        --changeY3: 40%; // --y + -5%
+    }
+
+    .gmail {
+        width: 25%;
+        transform: translate(270%, 50%);
+        --x: 270%;
+        --y: 50%;
+        // Can't do operation in-line due to variables being macros
+        --changeY1: 0%; // --y + -50%
+        --changeY2: 40%; // --y + -10%
+        --changeY3: 45%; // --y + -5%
+    }
+    .bounce {
+        animation: bounce;
+        animation-duration: 2s;
+    }
+
+    @keyframes bounce {
+        0%   { transform: translate(var(--x), var(--y)) scale(1, 1) }
+        10%  { transform: translate(var(--x), var(--y)) scale(1.1, .9)}
+        30%  { transform: translate(var(--x), var(--changeY1)) scale(.9, 1.1) }
+        50%  { transform: translate(var(--x), var(--y)) scale(1.05, .95) }
+        60%  { transform: translate(var(--x), var(--changeY2)) scale(.95, 1.05) }
+        65%  { transform: translate(var(--x), var(--changeY3)) scale(1, 1) }
+        70%  { transform: translate(var(--x), var(--y)) scale(1, 1) }
+        100% { transform: translate(var(--x), var(--y)) scale(1, 1) }
+    }
+
+    .message {
+        width: 45%;
+        transform: translate(135%, 60%);
+        animation: fadeOut 2s;
+        -webkit-animation: fadeOut 2s;
+        -moz-animation: fadeOut 2s;
+        -o-animation: fadeOut 2s;
+        -ms-animation: fadeOut 2s;
+        animation-timing-function: ease-in;
+        -webkit-animation-timing-function: ease-in;
+        -moz-animation-timing-function: ease-in;
+        -o-animation-timing-function: ease-in;
+        -ms-animation-timing-function: ease-in;
+
+        @keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
+
+        @-moz-keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
+        
+        @-webkit-keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
+        
+        @-o-keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
+        
+        @-ms-keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
+    }
+}
+
+/* Plane Closeup Region  */
+.plane-region {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min-content;
+    height: min-content;
+
+    .plane-close {
+        max-width: 100vw;
+        max-height: 120vh;
+    }
+
+    .form-region {
+        /* DEBUGGING */
+        // background-color: pink;
+        // border: red solid;
+        // border-width: 1px;
+        position: absolute;
+        transform: translate(10%, -100%);
+        width: 80%;
+        height: 55%;
+        perspective: 8vw;
+        overflow: hidden;
+        text-align: justify;
+
+        .form-content {
+            /* DEBUGGING */
+            // background-color: gray;
+            // overflow: visible;
+            position: relative;
+            top: 53%;
+            left: 10%;
+            width: 100%;
+            height: 100%;
+            color: black;
+            perspective: 80vw;
+            transform: rotate3d(-0.5, 0.5, 2.8, 14deg);
+            text-align: left;
+            
+            .input-handwriting {
+                position: relative;
+                margin-top: 20px;
+                margin-left: 30px;
+                transform: translate(0%, -50%);
+                background-color: transparent;
+                font-size: 2vh;
+                border: none;
+                outline: none;
+                width: 60%;
+            }
+        }
+    }
+}
+
+.button-plane-submit {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	padding: 10px 50px 10px 50px;
+    // padding-left: 25px;
+    border: 2px solid;
+    border-color: black;
+	border-radius: 25px;
+	outline: none;
+	// width: 60%;
 }
 
 .window {
@@ -174,4 +554,17 @@ body {
     position: fixed;
     top: 10%;
     right: 30%;
+}
+
+.tilt {
+    animation: tilt;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+@keyframes tilt {    
+    0% { transform: translateX(-50%) rotate(0deg) translateX(50%) }
+    20% { transform:  translateX(-50%) rotate(5deg) translateX(50%) }
+    80% { transform:  translateX(-50%) rotate(-5deg) translateX(50%) }
+    100% { transform:  translateX(-50%) rotate(0deg) translateX(50%) }
 }

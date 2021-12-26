@@ -41,7 +41,7 @@ class Computer extends Component {
     return (
       <div className="computer-region">
         <img src={computer_close_img} alt="Computer" className="computer-close"></img>
-        <div className="computer-screen">
+        <div className="computer-screen" style={this.state.showHome ? { backgroundColor: "white" } : null}>
           {this.state.showHome ? renderHome() : null}
           {this.state.showAll ? <Grid></Grid> : null}
         </div>

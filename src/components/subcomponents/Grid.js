@@ -12,9 +12,10 @@ class Grid extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    // this.handleEvent = this.handleEvent.bind(this);
+    this.handleEvent = this.handleEvent.bind(this);
     this.state = {
       grid: true,
+      hoverCard: false,
     }
   }
   handleClick(target) {
@@ -34,23 +35,30 @@ class Grid extends Component {
     }
   }
 
-  // handleEvent(event, target, state=true) {
-  //   switch(event) {
-  //     case "hoverCard":
-  //       state ? this.setState({ hoverCard: target }) : this.setState({ hoverCard: state})
-  //       break;
-  //     default:
-  //       console.error("Something went wrong");
-  //   }
-  // }
+  handleEvent(event, target, state=true) {
+    switch(event) {
+      case "hoverCard":
+        state ? this.setState({ hoverCard: target }) : this.setState({ hoverCard: state})
+        break;
+      default:
+        console.error("Something went wrong");
+    }
+  }
   
   render() {
     const Project = (name, image) => {
       return (
-        <div className="card">
+        <div className="card"
+          onMouseOver={() => this.handleEvent("hoverCard", name)}>
             <img src={image} alt={`${name} Img`}></img>
           <h1>{name}</h1> {/* Renders on card hover */}
         </div>
+      );
+    }
+
+    const BlankProject = () => {
+      return (
+        <div className="card blank"></div>
       );
     }
 
@@ -61,6 +69,9 @@ class Grid extends Component {
           {Project("Vaxbot", vaxbot_img)}
           {Project("PhotoLink", photolink_img)}
           {Project("Scoop", scoop_img)}
+          {BlankProject()}
+          {/* {Project("Scoop", scoop_img)} */}
+          {/* {Project("Scoop", scoop_img)} */}
           {/* {Project("Other", singify_img)} */}
           
           

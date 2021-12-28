@@ -7,6 +7,7 @@ header {
     color: $white;
 }
 
+/* Background */
 body {
     background: url("../../img/Background.png") no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -353,6 +354,67 @@ ul {
 
 .computer-screen::-webkit-scrollbar {
     display: none;
+}
+
+.project-focused {
+	position: fixed;
+    z-index: 0;
+    background-color: rgba(255, 255, 255, 1);
+    width: 80vw;
+    height: 100vh;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5% 5% 5% 5%;
+    overflow-y: scroll;
+    object-fit: contain;
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        align-items: center;
+        grid-auto-rows: auto;
+        // grid-row-gap: 30%;
+
+        // grid-gap: 1rem;        
+
+        .content-container {
+            position: relative;
+            // background-color: rgba(0, 0, 0, 0.5);
+            background-color: white;
+            width: 100%;
+            border-radius: 10px;
+
+            .content-text {
+                padding: 8% 5% 8% 5%;
+                font-weight: 700;
+                // filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5));
+
+            }
+        }
+
+        .left {
+            filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5));
+            left: 10%;
+        }
+
+        .right {
+            filter: drop-shadow(-5px 5px 5px rgba(0,0,0,0.5));
+            right: 10%;
+        }
+    
+        .content-img {
+            width: 80%;
+            aspect-ratio: 1 / 1;
+            border-radius: 10%;
+        }
+
+        .leftimg {
+            // position: relative;
+            // left: 10%;
+            // right: 10%;
+            transform: translateX(25%);
+        }
+    }
 }
 
 .shelf-container {

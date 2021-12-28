@@ -16,9 +16,10 @@ class Grid extends Component {
     this.state = {
       grid: true,
       hoverCard: false,
+      projectFocused: false,
     }
   }
-  handleClick(target) {
+  handleClick(target, name="") {
     switch(target) {
       case "grid":
         this.setState({
@@ -28,6 +29,11 @@ class Grid extends Component {
       case "carousel":
         this.setState({
           grid: false,
+        });
+        break;
+      case "project":
+        this.setState({
+          projectFocused: name,
         });
         break;
       default:
@@ -49,7 +55,10 @@ class Grid extends Component {
     const Project = (name, image) => {
       return (
         <div className="card"
-          onMouseOver={() => this.handleEvent("hoverCard", name)}>
+          onMouseOver={() => this.handleEvent("hoverCard", name)}
+          // onClick={() => this.handleClick("project", name)}
+          onClick={this.props.clickHandler}
+          >
             <img src={image} alt={`${name} Img`}></img>
           <h1>{name}</h1> {/* Renders on card hover */}
         </div>
@@ -73,8 +82,14 @@ class Grid extends Component {
           {/* {Project("Scoop", scoop_img)} */}
           {/* {Project("Scoop", scoop_img)} */}
           {/* {Project("Other", singify_img)} */}
-          
-          
+        </div>
+      );
+    }
+
+    const renderProjectFocused = (name) => {
+      return (
+        <div className="project-focused">
+          hello world {name}
         </div>
       );
     }
@@ -138,7 +153,7 @@ class Grid extends Component {
                 <p></p>
                 <p></p>
                 <p></p>            
-              </div>        
+              </div>
           </div>
           
           <div id="headline">
@@ -147,7 +162,7 @@ class Grid extends Component {
           </div>
 
           {this.state.grid ? renderGallery() : renderCarousel()}
-
+          {this.state.projectFocused ? renderProjectFocused(this.state.projectFocused) : null}
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         </div>
       );

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 // Components
 import Splash from './components/Splash';
-import Background from './components/Background';
 import Desk from './components/Desk';
 import Computer from './components/Computer';
 import Shelf from './components/Shelf';
 import Window from './components/Window';
 import Banner from './components/Banner';
 import Plane from './components/subcomponents/Plane';
+import Project from './components/subcomponents/Project';
 
 // Includes
 import './assets/css/default.min.css'
@@ -23,6 +23,7 @@ class App extends Component {
       showOpaque: false,
       showComputer: false,
       showPlane: false,
+      projectFocused: false,
     }
     this.clickEvent = this.clickEvent.bind(this);
   }
@@ -40,6 +41,9 @@ class App extends Component {
         break;
       case "plane":
         this.setState({ showPlane: true }, () => { this.setState({ showOpaque: true }) });
+        break;
+      case "projectFocused":
+        this.setState({ projectFocused: true });
         break;
       default:
         console.error("Something went wrong");
@@ -68,18 +72,19 @@ class App extends Component {
     // Main Component
     return (
       <div className="App">
-        {this.state.showSplash ? <Splash clickHandler={() => this.clickEvent("continue")}></Splash> : null}
-        <Background></Background>
+        {/* {this.state.showSplash ? <Splash clickHandler={() => this.clickEvent("continue")}></Splash> : null} */}
         <Desk clickHandler={() => this.clickEvent("computer")}></Desk>
         <Shelf clickHandler={() => this.clickEvent("plane")}></Shelf>
         <Window></Window>
         <Banner></Banner>
         {this.state.showOpaque ? <div className="opaque"></div> : null}
-        {this.state.showComputer ? <Computer></Computer> : null}
+        {this.state.showComputer ? <Computer clickHandler={() => this.clickEvent("projectFocused")}></Computer> : null}
         {this.state.showPlane ? <Plane showElement={e => this.updateEvent("plane-submit", e)}></Plane> : null}
         {this.state.showPlane && this.state.showPlaneSubmit ? <button className="button-plane-submit">Send</button> : null}
         {/* <button className="button-plane-submit">Send</button> */}
         {this.state.showOpaque ? renderExitButton() : null}
+        {this.state.projectFocused ? <Project></Project> : null}
+        {/* <Project></Project> */}
       </div>
     );
   }

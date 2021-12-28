@@ -43,7 +43,7 @@ class Computer extends Component {
         <img src={computer_close_img} alt="Computer" className="computer-close"></img>
         <div className="computer-screen" style={this.state.showHome ? { backgroundColor: "white" } : null}>
           {this.state.showHome ? renderHome() : null}
-          {this.state.showAll ? <Grid></Grid> : null}
+          {this.state.showAll ? <Grid clickHandler={this.props.clickHandler}></Grid> : null}
         </div>
       </div>
     );
